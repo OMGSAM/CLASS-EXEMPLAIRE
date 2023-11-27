@@ -1,0 +1,43 @@
+class documentaire:
+    _nomber=1
+    def _init_(self,titre="MOI",date="12/33" ):
+
+        self.titre=titre
+        self.date=date
+        self.id=documentaire._nomber
+        documentaire._nomber+=1
+    
+    def getnomber(self):
+          return self._nomber
+
+    def gettitre(self):
+              return self.titre
+    def set_titre(self,titre ):
+            self.titre=titre
+    def getdate(self):
+              return self.date
+    def set_date(self,date ):
+            self.date=date
+    def tostring(self):
+            return self.date + str(self.id)
+    def equals(self,yahya):
+            return self.id==yahya.id
+class exemplaire(documentaire):
+    _nomber = 1
+    def _init_(self,titre="OMG",date="06/06",numero=9,date_dachat="334/44") :
+        super()._init_(titre,date)
+        self.numero=numero
+        self.date_dachat=date_dachat
+        documentaire._nomber += 1
+    def getnumero(self):
+          return self.numero
+    def set_numero(self,numero ):
+            self.numero=numero
+    def getdate_dachat(self):
+          return self.date_dachat
+    def set_date_dachat(self,date_dachat ):
+            self.date_dachat=date_dachat
+    def tostring(self):
+            return super().tostring()+str(self.numero)+self.date_dachat
+r = exemplaire()
+print(r.tostring())
